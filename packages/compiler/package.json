@@ -4,7 +4,7 @@
 	"description": "Compiler source for the Idyllic API engine",
 	"author": "Rishi Kothari <itsrishikothari@gmail.com>",
 	"homepage": "https://github.com/rishiosaur/idyllic#readme",
-	"license": "MPL-2.0",
+	"license": "Apache-2.0",
 	"main": "dist/index.js",
 	"private": false,
 	"directories": {

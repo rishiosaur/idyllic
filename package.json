@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": "https://github.com/rishiosaur/idyllic.git",
   "author": "Rishi Kothari",
-  "license": "MPL-2.0",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@types/node": "^14.14.25",
     "lerna": "^3.22.1",
