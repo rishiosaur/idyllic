@@ -1,0 +1,37 @@
+{
+  "name": "idyllic",
+  "version": "0.0.0",
+  "description": "The zero-config, fastest way to build APIs",
+  "main": "index.js",
+  "repository": "https://github.com/rishiosaur/idyllic.git",
+  "author": "Rishi Kothari",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "@types/node": "^14.14.25",
+    "lerna": "^3.22.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-push": "lerna run check:fix"
+    }
+  },
+  "scripts": {
+    "format": "lerna run format",
+    "format:check": "lerna run format:check",
+    "lint": "lerna run lint",
+    "lint:check": "lerna run lint:check",
+    "check": "lerna run check",
+    "check:fix": "lerna run check:fix",
+    "build": "lerna run build",
+    "deploy": "lerna run build && lerna publish"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": true
+}
