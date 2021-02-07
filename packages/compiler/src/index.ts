@@ -7,13 +7,53 @@ import * as path from 'path'
 import * as util from 'util'
 import * as fs from 'fs'
 
+
+/**
+ * Compiler for stringified Idyllic Programs.
+ *
+ * @export
+ * @class IdyllicCompiler
+ */
 export class IdyllicCompiler {
 	text: string
+	/**
+	 * Token array for program. Fills when [[Lexer.collectTokens]] is run.
+	 *
+	 * @type {Token[]}
+	 * @memberof IdyllicCompiler
+	 */
 	tokens: Token[]
+
+	/**
+	 * Abstract node tree built up from parsing stage.
+	 *
+	 * @type {AstNode[]}
+	 * @memberof IdyllicCompiler
+	 */
 	ast: AstNode[] = []
+
+	/**
+	 * Concrete syntax tree built up from 3rd and 4th stages of compilation.
+	 *
+	 * @type {any[]}
+	 * @memberof IdyllicCompiler
+	 */
 	cst: any[] = []
+
+
+	/**
+	 * Final object constructed from the CST.
+	 *
+	 * @type {ConcreteNodes}
+	 * @memberof IdyllicCompiler
+	 */
 	compiled: ConcreteNodes
 
+	/**
+	 * Creates an instance of IdyllicCompiler.
+	 * @param {string} text Input to the compiler.
+	 * @memberof IdyllicCompiler
+	 */
 	constructor(text: string) {
 		this.text = text
 	}
@@ -33,6 +73,14 @@ export class IdyllicCompiler {
 		return this.compiled
 	}
 
+	/**
+	 * Asynchronously reads an Idyllic program from file and constructs an [[IdyllicCompiler]].
+	 *
+	 * @static
+	 * @param {string} route
+	 * @returns
+	 * @memberof IdyllicCompiler
+	 */
 	public static async fromFile(route: string) {
 		const readFile = util.promisify(fs.readFile)
 		const text = (await readFile(path.join(process.cwd(), route))).toString(
