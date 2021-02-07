@@ -6,6 +6,7 @@
 	"homepage": "https://github.com/rishiosaur/idyllic#readme",
 	"license": "Apache-2.0",
 	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"private": false,
 	"directories": {
 		"src": "src",
