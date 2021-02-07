@@ -240,17 +240,17 @@ export class Compiler {
 			global: concreteSequence(
 				(this.compiledNodes.filter(
 					(z) => z?.type === AstType.GlobalHandler
-				)[0] as CompiledGlobalHandlerNode).sequence
+				)[0] as CompiledGlobalHandlerNode)?.sequence || []
 			),
 			routes: Object.fromEntries(
 				(this.compiledNodes.filter(
 					(z) => z?.type === AstType.Route
-				) as CompiledRouteNode[]).map((route) => [
+				) as CompiledRouteNode[])?.map((route) => [
 					route.route.literal,
 					{
 						sequence: concreteSequence(route.sequence),
 						requests: Object.fromEntries(
-							route.handlers.map((request) => [
+							route.handlers?.map((request) => [
 								request.token.literal,
 								{
 									sequence: concreteSequence(request.sequence),
@@ -262,10 +262,10 @@ export class Compiler {
 										),
 									},
 								},
-							])
+							]) || []
 						),
 					},
-				])
+				]) || []
 			),
 		}
 		return this
