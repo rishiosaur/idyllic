@@ -13,7 +13,8 @@ The specification language for building APIs ridiculously fast.
 
 
 # Table of Contents
-- [How it works](#how-it-works)
+- [Getting Started](#getting-started)
+- [Manifesto](#manifesto)
 - [Language](#language)
     * [Definitions](#definitions)
         + [Handlers](#handlers)
@@ -37,7 +38,11 @@ The specification language for building APIs ridiculously fast.
 - [Server](#server)
 - [Contributing](#contributing)
 
-# How it works
+# Getting Started
+
+You can find a tiny example of what Idyllic looks like at [the TODO example](https://github.com/rishiosaur/idyllic-todo)
+
+# Manifesto.
 
 Web servers like Express and Koa are great, but they all have a fundamental flaw: boilerplate. Each one of these ubiquitous 
 frameworks has their own semantics about how they work—you need to write your code around the framework.
