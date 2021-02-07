@@ -7,7 +7,6 @@ import * as path from 'path'
 import * as util from 'util'
 import * as fs from 'fs'
 
-
 /**
  * Compiler for stringified Idyllic Programs.
  *
@@ -39,7 +38,6 @@ export class IdyllicCompiler {
 	 * @memberof IdyllicCompiler
 	 */
 	cst: any[] = []
-
 
 	/**
 	 * Final object constructed from the CST.

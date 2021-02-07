@@ -8,11 +8,7 @@
 	"include": ["./src"],
 	"baseUrl": ".",
 	"paths": {
-		"@idyllic/compiler": [
-			"../compiler/src/*"
-		],
-		"@idyllic/server": [
-			"./server/src/*"
-		]
+		"@idyllic/compiler": ["../compiler/src/*"],
+		"@idyllic/server": ["./server/src/*"]
 	}
 }
