@@ -1,6 +1,6 @@
 {
 	"name": "@idyllic/server",
-	"version": "0.1.7",
+	"version": "0.1.8",
 	"description": "The complementary web server for Idyllic.",
 	"author": "Rishi Kothari <itsrishikothari@gmail.com>",
 	"homepage": "https://github.com/rishiosaur/idyllic.git",
