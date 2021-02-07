@@ -1,7 +1,7 @@
 import { ConcreteNodes } from '@idyllic/compiler/dist/compiler/cst'
 import * as http from 'http'
 import { TokenType } from '@idyllic/compiler/dist/lexer'
-import * as util from 'util'
+import { parse } from 'querystring'
 
 export class IdyllicServer {
 	constructor(public compiled: ConcreteNodes) {}
@@ -9,6 +9,20 @@ export class IdyllicServer {
 	public start(port?: number, onStart?: () => void) {
 		const server = http.createServer(async (req, res) => {
 			try {
+				const body = await new Promise((res, rej) => {
+					let body = ''
+					if (req.method === 'POST') {
+						req.on('data', (chunk) => {
+							body += chunk.toString() // convert Buffer to string
+						})
+						req.on('end', () => {
+							res(JSON.parse(body))
+						})
+					} else {
+						res(null)
+					}
+				})
+
 				res.setHeader('Content-Type', 'application/json')
 
 				const listified = Object.entries(this.compiled.routes)
@@ -95,6 +109,7 @@ export class IdyllicServer {
 										...request,
 										args: a.arguments,
 										query,
+										body,
 									})
 
 									request = returned
@@ -106,6 +121,7 @@ export class IdyllicServer {
 										...request,
 										args: a.arguments,
 										query,
+										body,
 									})
 									return runMore
 									break
@@ -121,6 +137,7 @@ export class IdyllicServer {
 						...request,
 						args: requestHandler.handler.arguments,
 						query,
+						body,
 					})
 
 					res.writeHead(200)
