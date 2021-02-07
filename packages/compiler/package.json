@@ -1,6 +1,6 @@
 {
 	"name": "@idyllic/compiler",
-	"version": "0.1.6",
+	"version": "0.1.7",
 	"description": "Compiler source for the Idyllic API engine",
 	"author": "Rishi Kothari <itsrishikothari@gmail.com>",
 	"homepage": "https://github.com/rishiosaur/idyllic#readme",
