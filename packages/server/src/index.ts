@@ -1,7 +1,6 @@
 import { ConcreteNodes } from '@idyllic/compiler/dist/compiler/cst'
 import * as http from 'http'
 import { TokenType } from '@idyllic/compiler/dist/lexer'
-import { parse } from 'querystring'
 
 export class IdyllicServer {
 	constructor(public compiled: ConcreteNodes) {}
@@ -9,9 +8,11 @@ export class IdyllicServer {
 	public start(port?: number, onStart?: () => void) {
 		const server = http.createServer(async (req, res) => {
 			try {
-				const body = await new Promise((res, rej) => {
+				const body = await new Promise((res) => {
 					let body = ''
-					if (req.method === 'POST') {
+					if (
+						['POST', 'PUT', 'PATCH', 'DELETE'].includes(req.method as string)
+					) {
 						req.on('data', (chunk) => {
 							body += chunk.toString() // convert Buffer to string
 						})
