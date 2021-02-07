@@ -24,7 +24,7 @@
 	},
 	"scripts": {
 		"test": "ts-node garbage/index.ts",
-		"build": "tsc",
+		"build": "tsc --build",
 		"format": "prettier --single-quote --write './**/*'",
 		"format:check": "prettier --single-quote --check './**/*'",
 		"lint": "eslint \"./**/*.{js,ts,tsx,jsx}\" --quiet --fix",

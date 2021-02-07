@@ -5,5 +5,14 @@
 		"declarationDir": "dist",
 		"declaration": true
 	},
-	"include": ["./src"]
+	"include": ["./src"],
+	"baseUrl": ".",
+	"paths": {
+		"@idyllic/compiler": [
+			"../compiler/src/*"
+		],
+		"@idyllic/server": [
+			"./server/src/*"
+		]
+	}
 }

@@ -8,7 +8,8 @@
     "emitDecoratorMetadata": true,
     "strictPropertyInitialization": false,
     "declaration": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "composite": true
   },
   "exclude": [
     "node_modules"
@@ -16,10 +17,10 @@
   "baseUrl": ".",
   "paths": {
     "@idyllic/compiler": [
-      "packages/compiler"
+      "packages/compiler/src/*"
     ],
     "@idyllic/server": [
-      "packages/server"
+      "packages/server/src/*"
     ]
   }
 }
