@@ -9,15 +9,8 @@
 	"types": "dist/index.d.ts",
 	"private": false,
 	"directories": {
-		"lib": "lib",
-		"test": "ts-node src/index.ts",
-		"build": "tsc",
-		"format": "prettier --single-quote --write './**/*'",
-		"format:check": "prettier --single-quote --check './**/*'",
-		"lint": "eslint \"./**/*.{js,ts,tsx,jsx}\" --quiet --fix",
-		"lint:check": "eslint \"./**/*.{js,ts,tsx,jsx}\" --quiet",
-		"check": "yarn run format:check && yarn run lint:check",
-		"check:fix": "yarn run format && yarn run lint"
+		"src": "src",
+		"test": "__tests__"
 	},
 	"files": [
 		"lib"
