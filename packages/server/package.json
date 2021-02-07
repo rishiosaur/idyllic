@@ -1,6 +1,6 @@
 {
 	"name": "@idyllic/server",
-	"version": "0.0.0",
+	"version": "0.1.1",
 	"description": "The complementary web server for Idyllic.",
 	"author": "Rishi Kothari <itsrishikothari@gmail.com>",
 	"homepage": "https://github.com/rishiosaur/idyllic.git",
@@ -62,6 +62,6 @@
 		"prettier-eslint": "^11.0.0"
 	},
 	"dependencies": {
-		"@idyllic/compiler": "^0.1.0"
+		"@idyllic/compiler": "^0.1.1"
 	}
 }
