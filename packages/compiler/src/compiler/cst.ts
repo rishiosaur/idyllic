@@ -100,7 +100,7 @@ export class CompiledHandlerNode {
 	) {}
 }
 
-interface ConcreteSequenceNode {
+export interface ConcreteSequenceNode {
 	interop: Function
 	name: string
 	type: TokenType
