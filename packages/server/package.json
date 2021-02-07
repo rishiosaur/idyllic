@@ -1,0 +1,67 @@
+{
+	"name": "@idyllic/server",
+	"version": "0.0.0",
+	"description": "The complementary web server for Idyllic.",
+	"author": "Rishi Kothari <itsrishikothari@gmail.com>",
+	"homepage": "https://github.com/rishiosaur/idyllic.git",
+	"license": "Apache-2.0",
+	"main": "dist/index.js",
+	"private": false,
+	"directories": {
+		"lib": "lib",
+		"test": "ts-node src/index.ts",
+		"build": "tsc",
+		"format": "prettier --single-quote --write './**/*'",
+		"format:check": "prettier --single-quote --check './**/*'",
+		"lint": "eslint \"./**/*.{js,ts,tsx,jsx}\" --quiet --fix",
+		"lint:check": "eslint \"./**/*.{js,ts,tsx,jsx}\" --quiet",
+		"check": "yarn run format:check && yarn run lint:check",
+		"check:fix": "yarn run format && yarn run lint"
+	},
+	"files": [
+		"lib"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/rishiosaur/idyllic.git"
+	},
+	"scripts": {
+		"test": "ts-node garbage/index.ts",
+		"build": "tsc",
+		"format": "prettier --single-quote --write './**/*'",
+		"format:check": "prettier --single-quote --check './**/*'",
+		"lint": "eslint \"./**/*.{js,ts,tsx,jsx}\" --quiet --fix",
+		"lint:check": "eslint \"./**/*.{js,ts,tsx,jsx}\" --quiet",
+		"check": "yarn run format:check && yarn run lint:check",
+		"check:fix": "yarn run format && yarn run lint"
+	},
+	"bugs": {
+		"url": "https://github.com/rishiosaur/idyllic/issues"
+	},
+	"devDependencies": {
+		"@types/react": "^16.9.49",
+		"@types/treeify": "^1.0.0",
+		"@typescript-eslint/eslint-plugin": "^4.1.0",
+		"@typescript-eslint/parser": "^4.1.0",
+		"eslint": "^7.8.1",
+		"eslint-config-airbnb": "^18.2.0",
+		"eslint-config-prettier": "^6.11.0",
+		"eslint-config-wesbos": "^1.0.0",
+		"eslint-plugin-html": "^6.1.0",
+		"eslint-plugin-import": "2.20.0",
+		"eslint-plugin-jsx-a11y": "6.2.3",
+		"eslint-plugin-prettier": "^3.1.4",
+		"eslint-plugin-react": "7.18.0",
+		"eslint-plugin-react-hooks": "1.7.0",
+		"husky": "^4.3.0",
+		"nodemon": "^2.0.6",
+		"prettier": "^2.1.2",
+		"prettier-eslint": "^11.0.0"
+	},
+	"dependencies": {
+		"@idyllic/compiler": "^0.1.0"
+	}
+}
