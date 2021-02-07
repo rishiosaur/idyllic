@@ -2,9 +2,27 @@ import { ConcreteNodes } from '@idyllic/compiler/dist/compiler/cst'
 import * as http from 'http'
 import { TokenType } from '@idyllic/compiler/dist/lexer'
 
+/**
+ * Web server for Idyllic.
+ *
+ * @export
+ * @class IdyllicServer
+ */
 export class IdyllicServer {
+	/**
+	 * Creates an instance of an IdyllicServer.
+	 * @param {ConcreteNodes} compiled Compiled Idyll object.
+	 * @memberof IdyllicServer
+	 */
 	constructor(public compiled: ConcreteNodes) {}
 
+	/**
+	 * Starts the server defined in the Idyll on a given port.
+	 *
+	 * @param {number} [port] Port to start server on
+	 * @param {() => void} [onStart] Function to be run on start.
+	 * @memberof IdyllicServer
+	 */
 	public start(port?: number, onStart?: () => void) {
 		const server = http.createServer(async (req, res) => {
 			try {
