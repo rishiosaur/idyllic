@@ -6,7 +6,7 @@ import * as util from 'util'
 export class IdyllicServer {
 	constructor(public compiled: ConcreteNodes) {}
 
-	public start(port?: number) {
+	public start(port?: number, onStart?: () => void) {
 		const server = http.createServer(async (req, res) => {
 			try {
 				res.setHeader('Content-Type', 'application/json')
@@ -18,10 +18,15 @@ export class IdyllicServer {
 				const routeHandler = listified
 					.filter((m) => {
 						const [key] = m
-						const splitRoute = key.split('/').filter((z) => z !== '')
+						const splitRoute = key
+							.split('/')
+							.filter((z, i) => !(z == '' && i === key.split('/').length - 1))
 						const split = req.url
 							?.split('/')
-							.filter((z) => z !== '') as string[]
+							.filter(
+								(z, i) =>
+									!(z == '' && i === (req.url?.split('/')?.length || -1) - 1)
+							) as string[]
 
 						let x = false
 						for (const [i, z] of splitRoute.entries()) {
@@ -45,8 +50,6 @@ export class IdyllicServer {
 						const split = req.url
 							?.split('/')
 							.filter((z) => z !== '') as string[]
-						console.log(split)
-						console.log(z)
 						return z.split('/').filter((z) => z !== '').length === split.length
 					})[0]
 
@@ -55,7 +58,7 @@ export class IdyllicServer {
 					return res.end('Not found.')
 				}
 
-				const [route, handler] = routeHandler
+				const [, handler] = routeHandler
 				const requestHandler =
 					handler.requests[req.method?.toLowerCase() as string]
 
@@ -69,8 +72,6 @@ export class IdyllicServer {
 					...handler.sequence,
 					...requestHandler.sequence,
 				]
-
-				console.log(sequence)
 
 				let request: any = req
 
@@ -134,8 +135,6 @@ export class IdyllicServer {
 			}
 		})
 
-		server.listen(port, 'localhost', () => {
-			console.log('Server starteddd!')
-		})
+		server.listen(port ?? 3000, 'localhost', onStart)
 	}
 }
