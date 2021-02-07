@@ -12,9 +12,6 @@
 		"src": "src",
 		"test": "__tests__"
 	},
-	"files": [
-		"lib"
-	],
 	"publishConfig": {
 		"access": "public"
 	},
