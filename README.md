@@ -1,9 +1,11 @@
 ![Banner](assets/Banner.svg)
 # ⚡️ Idyllic
 
-![lint status](https://github.com/rishiosaur/idyllic/workflows/lint/badge.svg)
-![format status](https://github.com/rishiosaur/idyllic/workflows/format/badge.svg)
-![build status](https://github.com/rishiosaur/idyllic/workflows/build/badge.svg)
+[comment]: <> (![lint status]&#40;https://github.com/rishiosaur/idyllic/workflows/lint/badge.svg&#41;)
+
+[comment]: <> (![format status]&#40;https://github.com/rishiosaur/idyllic/workflows/format/badge.svg&#41;)
+
+[comment]: <> (![build status]&#40;https://github.com/rishiosaur/idyllic/workflows/build/badge.svg&#41;)
 ![GitHub](https://img.shields.io/github/license/rishiosaur/idyllic)
 ![GitHub issues](https://img.shields.io/github/issues/rishiosaur/idyllic)
 ![GitHub contributors](https://img.shields.io/github/contributors/rishiosaur/idyllic)
