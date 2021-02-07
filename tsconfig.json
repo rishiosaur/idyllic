@@ -12,5 +12,14 @@
   },
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "baseUrl": ".",
+  "paths": {
+    "@idyllic/compiler": [
+      "packages/compiler"
+    ],
+    "@idyllic/server": [
+      "packages/server"
+    ]
+  }
 }
