@@ -39,3 +39,13 @@ export class UndefinedDefinition extends Error {
 		)
 	}
 }
+
+export class UndefinedIdent extends Error {
+	constructor(type: string, ident: IdentNode) {
+		super(
+			`${mapPositionToString(ident.base)} Could not find ${type} function "${
+				ident.base.literal
+			}" defined.`
+		)
+	}
+}

@@ -1,5 +1,9 @@
 import { Token, TokenType } from '../lexer'
-import { UndefinedDefinition, UndefinedFragment } from '../errors'
+import {
+	UndefinedDefinition,
+	UndefinedFragment,
+	UndefinedIdent,
+} from '../errors'
 import * as path from 'path'
 import {
 	AstNode,
@@ -163,7 +167,10 @@ export class Compiler {
 				const interop =
 					defDict[node.typeToken.literal][node.identifier.base.literal]
 				if (interop === undefined) {
-					throw new Error('oops i couldnt find that definition :(')
+					throw new UndefinedIdent(
+						node.typeToken.literal as string,
+						node.identifier
+					)
 				}
 
 				return new CompiledSequenceNode(
@@ -178,7 +185,7 @@ export class Compiler {
 		const compileIdent = (ident: IdentNode, type: string) => {
 			const interop = defDict[type][ident.base.literal]
 			if (interop === undefined) {
-				throw new Error('oops i couldnt find that definition :(')
+				throw new UndefinedIdent(type, ident)
 			}
 
 			return interop
