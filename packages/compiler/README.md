@@ -7,12 +7,15 @@ Complete Typescript implementation of a compiler for the Idyllic Language.
 ```typescript
 import { IdyllicCompiler } from '@idyllic/compiler'
 import * as util from 'util'
+
 ;(async () => {
 	const compiled = await (await IdyllicCompiler.fromFile('spec.idl')).compile()
 
 	console.log(util.inspect(compiled, false, null, true))
 })()
 ```
+
+Using the Idyllic compiler programmatically is extremely simple; just import the class and run the fromFile function.
 
 ## Structure
 
