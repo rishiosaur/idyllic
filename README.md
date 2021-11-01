@@ -50,8 +50,7 @@ You can find a tiny example of what Idyllic looks like at [the TODO example](htt
 
 # Manifesto.
 
-Web servers like Express and Koa are great, but they all have a fundamental flaw: boilerplate. Each one of these ubiquitous 
-frameworks has their own semantics about how they work—you need to write your code around the framework.
+Boilerplate is the single most disingenuous part of the Node ecosystem today. Frameworks like Express, Koa, and so many more focus on having rigid rules for how to write code instead of, well, writing it.
 
 Idyllic aims to reverse that paradigm. Instead of writing your code to follow the arbitrary conventions of a given 
 framework, the Idyllic pattern allows you to write code *however you want*.
