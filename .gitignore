@@ -116,3 +116,4 @@ garbage/
 .pnp.*
 .DS_STORE
 dist/
+.idea/
